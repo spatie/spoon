@@ -1,4 +1,4 @@
-## Spoon
+# Spoon
 
 Spoon is the Laravel template that is used for our projects that don't use [Blender](https://github.com/spatie/blender), which ships with big features like i18n and an admin panel. Spoon is relatively unopinionated, and comes with some utility packages we use in every project.
 
@@ -47,7 +47,7 @@ php artisan migrate --seed
 
 Installing Spoon's front end dependencies requires `yarn`.
 
-```
+```bash
 yarn
 ```
 
