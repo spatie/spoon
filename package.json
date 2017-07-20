@@ -2,6 +2,8 @@
   "private": true,
   "scripts": {
     "css": "postcss resources/assets/css/**/*.css -d public/css/",
+    "css-watch": "postcss resources/assets/css/**/*.css -d public/css/ -w",
+    "css-lint": "stylelint resources/assets/css/**/*.css --fix -r",
     "dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
@@ -19,6 +21,8 @@
     "postcss-cli": "^4.1.0",
     "postcss-cssnext": "^3.0.2",
     "postcss-easy-import": "^2.1.0",
+    "stylelint": "^8.0.0",
+    "stylelint-config-standard": "^16.0.0",
     "vue": "^2.4.0"
   }
 }
