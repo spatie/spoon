@@ -1,5 +1,6 @@
 <?php
 
-function locale() {
+function locale()
+{
     return config('app.locale');
 }
