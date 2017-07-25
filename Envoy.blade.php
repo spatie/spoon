@@ -29,7 +29,6 @@ updateSymlinks
 optimizeInstallation
 backupDatabase
 migrateDatabase
-insertNewFragments
 blessNewRelease
 cleanOldReleases
 finishDeploy
@@ -85,7 +84,7 @@ yarn
 @task('generateAssets', ['on' => 'remote'])
 {{ logMessage("🌅  Generating assets...") }}
 cd {{ $newReleaseDir }};
-yarn run production
+yarn run production -- --progress false
 @endtask
 
 @task('updateSymlinks', ['on' => 'remote'])
@@ -94,11 +93,6 @@ yarn run production
 rm -rf {{ $newReleaseDir }}/storage;
 cd {{ $newReleaseDir }};
 ln -nfs {{ $baseDir }}/persistent/storage storage;
-
-# Remove the public/media directory and replace with persistent data
-rm -rf {{ $newReleaseDir }}/public/media;
-cd {{ $newReleaseDir }};
-ln -nfs {{ $baseDir }}/persistent/media public/media;
 
 # Import the environment config
 cd {{ $newReleaseDir }};
@@ -136,12 +130,6 @@ sudo service php7.1-fpm restart
 sudo supervisorctl restart all
 @endtask
 
-@task('insertNewFragments', ['on' => 'remote'])
-{{ logMessage("㊙  Inserting new fragments...") }}
-cd {{ $newReleaseDir }};
-php artisan fragments:import;
-@endtask
-
 @task('cleanOldReleases', ['on' => 'remote'])
 {{ logMessage("🚾  Cleaning up old releases...") }}
 # Delete all but the 5 most recent.
@@ -164,7 +152,3 @@ php artisan config:cache
 sudo supervisorctl restart all
 sudo service php7.1-fpm restart
 @endtask
-
-@after
-@slack(env('SLACK_DEPLOYMENT_WEBHOOK_URL'), '#deployments', "{$server}: {$baseDir} release {$newReleaseName} by {$user}: {$task} done")
-@endafter
