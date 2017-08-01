@@ -15,9 +15,10 @@
 </template>
 
 <script>
-    export default {
-        mounted() {
-            console.log('Component mounted.')
-        }
-    }
+export default {
+    mounted() {
+        // eslint-disable-next-line no-console
+        console.log('Component mounted.');
+    },
+};
 </script>
