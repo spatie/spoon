@@ -1,6 +1,16 @@
 const mix = require('laravel-mix');
-const sys = require('sys');
-const { exec } = require('child_process');
+
+mix.config.uglify.compress.drop_console = false;
+
+mix.config.postCss = [
+    require('postcss-easy-import')(),
+    require('postcss-cssnext')({
+        features: {
+            // Mix takes care of this.
+            autoprefixer: false,
+        },
+    }),
+];
 
 /*
  |--------------------------------------------------------------------------
@@ -14,7 +24,6 @@ const { exec } = require('child_process');
  */
 
 mix
+    .version()
     .js('resources/assets/js/app.js', 'public/js')
-    .then(() => {
-        exec('npm run css', (err, stdout, stderr) => sys.puts(stdout));
-    });
+    .postCss('resources/assets/css/app.css', 'public/css');
