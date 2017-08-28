@@ -1,16 +1,7 @@
 const mix = require('laravel-mix');
 
 mix.config.uglify.compress.drop_console = false;
-
-mix.config.postCss = [
-    require('postcss-easy-import')(),
-    require('postcss-cssnext')({
-        features: {
-            // Mix takes care of this.
-            autoprefixer: false,
-        },
-    }),
-];
+mix.config.postCss = require('./postcss.config').plugins;
 
 /*
  |--------------------------------------------------------------------------
