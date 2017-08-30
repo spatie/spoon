@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "css-lint": "stylelint resources/assets/css/**/*.css --fix -r",
+    "css-lint": "stylelint \"resources/assets/css/**/*.css\" --fix",
     "js-lint": "eslint resources/assets/js --ext .js,.vue --fix && exit 0",
     "dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
