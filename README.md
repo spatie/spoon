@@ -35,7 +35,17 @@ Install the composer dependencies
 composer install
 ```
 
-Make a copy `.env.example` and rename to `.env`
+Make a copy of the `.env.example` file
+
+```bash
+cp .env.example .env
+```
+
+Generate an application key
+
+```bash
+php artisan key:generate
+```
 
 Finally make sure you have a database named `spoon`, and run the migrations and seeds
 
