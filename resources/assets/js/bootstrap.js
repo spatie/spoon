@@ -1,8 +1,4 @@
-/**
- * First we'll require the necessary polyfills for our application.
- */
-
-require('babel-polyfill');
+// require('babel-polyfill');
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -10,9 +6,9 @@ require('babel-polyfill');
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-const axios = require('axios');
+// const axios = require('axios');
 
-axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+// axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /**
  * Next we will register the CSRF Token as a common header with Axios so that
@@ -20,11 +16,11 @@ axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
  * a simple convenience so we don't have to attach every token manually.
  */
 
-const token = document.head.querySelector('meta[name="csrf-token"]');
+// const token = document.head.querySelector('meta[name="csrf-token"]');
 
-if (token) {
-    axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
-} else {
-    // eslint-disable-next-line no-console
-    console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
-}
+// if (token) {
+//     axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+// } else {
+//     // eslint-disable-next-line no-console
+//     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+// }
