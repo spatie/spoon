@@ -9,7 +9,7 @@ follow semver for this project and won't guarantee that the code (especially the
 
 Some highlights of what's included here:
 
-- Devtools: debugbar, laravel-mail-preview, laravel-tail, laravel-tinker-tools
+- Devtools: debugbar, laravel-mail-preview, laravel-tail
 - Database backups
 - Bugsnag integration
 - PHP-CS fixer
