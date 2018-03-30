@@ -54,7 +54,7 @@
         "deploy-code": [
             "envoy run deploy-code"
         ],
-        "fix-cs": [
+        "format": [
             "vendor/bin/php-cs-fixer fix ."
         ],
         "post-root-package-install": [
