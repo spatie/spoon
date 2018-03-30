@@ -14,7 +14,7 @@ class ViewServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Blade::withDoubleEncoding();
+        //
     }
 
     /**
