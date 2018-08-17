@@ -55,7 +55,7 @@
             "envoy run deploy-code"
         ],
         "format": [
-            "vendor/bin/php-cs-fixer fix ."
+            "vendor/bin/php-cs-fixer fix"
         ],
         "post-root-package-install": [
             "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
