@@ -3,8 +3,8 @@ const mix = require('laravel-mix');
 require('laravel-mix-purgecss');
 
 mix
-    .js('resources/assets/js/app.js', 'public/js/app.js')
-    .postCss('resources/assets/css/app.css', 'public/css/app.css')
+    .js('resources/js/app.js', 'public/js/app.js')
+    .postCss('resources/css/app.css', 'public/css/app.css')
 
     .version()
 
