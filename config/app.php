@@ -166,7 +166,6 @@ return [
         /*
          * Package Service Providers...
          */
-        Barryvdh\Debugbar\ServiceProvider::class,
         Bugsnag\BugsnagLaravel\BugsnagServiceProvider::class,
         Spatie\Backup\BackupServiceProvider::class,
         Spatie\Tail\TailServiceProvider::class,
@@ -179,6 +178,7 @@ return [
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
+        App\Providers\TelescopeServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\ViewServiceProvider::class,
 
